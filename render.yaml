@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: animora-studio
+    runtime: static
+    buildCommand: python3 build.py
+    staticPublishPath: ./dist
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /packs/*
+        name: Cache-Control
+        value: public, max-age=86400
