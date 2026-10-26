@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parent
 DIST = ROOT / 'dist'
 DIST.mkdir(exist_ok=True)
 (DIST / 'vendor').mkdir(exist_ok=True)
-for name in ['index.html', 'app.js', 'style.css', 'software-renderer.js', 'credits.html', 'catalog.json', 'characters.js', 'motion.js', 'exporter.js', 'RobotExpressive.glb', 'Fox.glb', 'Fox-LICENSE.md', 'Robot-LICENSE.md', 'MEDIABUNNY-LICENSE.txt']:
+for name in ['cartoon.html', 'cartoon.css', 'cartoon.js', 'cartoon-engine.js', 'cinematic.js', 'index.html', 'app.js', 'style.css', 'software-renderer.js', 'credits.html', 'catalog.json', 'characters.js', 'motion.js', 'exporter.js', 'RobotExpressive.glb', 'Fox.glb', 'Fox-LICENSE.md', 'Robot-LICENSE.md', 'MEDIABUNNY-LICENSE.txt']:
     shutil.copy2(ROOT / name, DIST / name)
 for name in ['three.module.js', 'GLTFLoader.js', 'BufferGeometryUtils.js', 'OrbitControls.js', 'mediabunny.mjs']:
     shutil.copy2(ROOT / name, DIST / 'vendor' / name)
@@ -28,4 +28,4 @@ for model in models:
     for field in ['file', 'thumb']:
         if not (DIST / model[field]).is_file():
             raise SystemExit('Missing asset: ' + model[field])
-print(f'Build successful: {len(models)} library models + 28 procedural models + 2 rigged models. Publish: dist')
+print(f'Build successful: {len(models)} library models + 33 procedural models + 2 rigged models. Publish: dist')
